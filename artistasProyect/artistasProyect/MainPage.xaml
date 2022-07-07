@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="artistasProyect.MainPage">
+
+    <StackLayout >
+        <Grid RowDefinitions="*,Auto">
+            <Image Grid.Row="0"
+                   Source="audifonos"
+                   Aspect="AspectFill"/>
+
+        </Grid>
+        <Frame Grid.Row="1" Margin="0,-35,0,25" CornerRadius="30"  HasShadow="False">
+            <Grid RowDefinitions="Auto,Auto,*" >
+
+                <Label Grid.Row="1" Text="Bienvenidos a mi lista de Artistas o Agrupaciones. "
+       FontAttributes="Bold" TextColor="#7789B5" FontSize="Large" LineHeight="1.4" Margin="30,0"
+       HorizontalTextAlignment="Center"/>
+            </Grid>
+        </Frame>
+        <Label Grid.Row="1" Text="A continuación te presento una lista con mis artistas favoritos&#10;Espero que te guste! "
+       FontAttributes="Bold" TextColor="#9fa2a8" FontSize="{OnPlatform iOS='18', Android='15'}" LineHeight="1.4" Margin="30,0"
+       HorizontalTextAlignment="Center"/>
+            <ImageButton Grid.Row="2" CornerRadius="33" Source="btnPlay" BackgroundColor="White" HeightRequest="66" WidthRequest="66"
+                     xct:ShadowEffect.Color="DarkBlue" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,15" Clicked="NavigationClicked"/>
+
+    </StackLayout>
+
+</ContentPage>

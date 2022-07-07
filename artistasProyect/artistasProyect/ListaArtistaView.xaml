@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="artistasProyect.ListaArtistaView">
+    <ContentPage.Resources>
+        <Style TargetType="StackLayout">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="Transparent" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        
+        
+        
+        
+        
+        
+        <StackLayout>
+            <Label Grid.Column="0" Grid.Row="2" Text="Artista / Agrupacion" TextColor="#858788" FontSize="20" FontAttributes="Bold" />
+
+            <CollectionView Grid.ColumnSpan="2" Grid.Row="3" HorizontalScrollBarVisibility="Never"
+                            ItemsSource="{Binding Artista}"
+                            SelectionMode="Single"
+                            SelectionChanged="OnSelectionChanged"
+                             Margin="-10,0,-25,0"
+                            ItemsLayout="HorizontalList"
+                            HeightRequest="580">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="2,10,30,30">
+                            <Frame Padding="20,10,20,30" WidthRequest="220" HeightRequest="220" VerticalOptions="FillAndExpand" CornerRadius="20" HorizontalOptions="Start" HasShadow="False" xct:ShadowEffect.Color="DarkBlue" xct:ShadowEffect.OffsetY="10">
+                                <Grid RowDefinitions="*,Auto,Auto" ColumnDefinitions="*,Auto">
+                                    <Frame Grid.ColumnSpan="3" Grid.Row="0" IsClippedToBounds="True" CornerRadius="10" HasShadow="False" Padding="0" xct:ShadowEffect.Color="DarkGray" xct:ShadowEffect.OffsetY="12">
+                                        <Image Source="{Binding Imagen}" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Grid.Column="1" Grid.Row="1" TextColor="DarkBlue" FontSize="Medium"
+                                       Text="{Binding Nombre}" FontAttributes="Bold" Padding="0,10,0,0"/>
+                                    <Label Grid.Row="2" Grid.Column="1"
+                                       Text="{Binding Genero}" FontSize="Small" FontAttributes="Italic"/>
+
+
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Grid.Row="2" CornerRadius="10" BackgroundColor="White" HeightRequest="40" xct:ShadowEffect.Color="DarkBlue"
+                    HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,15" Text="Registrate aqui" Clicked="RegistroClicked"></Button>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
