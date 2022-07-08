@@ -20,7 +20,7 @@
             <Entry Grid.Row="1" Placeholder="Nombre completo" Margin="30,0"></Entry>
             <Entry  Grid.Row="2" Placeholder="Correo electronico" Margin="30,0"></Entry>
 
-            <Picker Title="Selecciona tu Estado" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="30,0" TextColor="#9fa2a8"></Picker>
+            <Picker Title="Selecciona tu Estado" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="30,0"  TextColor="#9fa2a8"></Picker>
             <Picker Title="Selecciona tu Ciudad" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="30,0" TextColor="#9fa2a8"></Picker>
             <Picker Title="Selecciona tu Colonia" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="30,0" TextColor="#9fa2a8"></Picker>
 
