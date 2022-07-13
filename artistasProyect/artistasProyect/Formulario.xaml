@@ -17,24 +17,27 @@
        HorizontalTextAlignment="Center"/>
                 </Grid>
             </Frame>
-            <Entry Grid.Row="1" Placeholder="Nombre completo" Margin="30,0"></Entry>
-            <Entry  Grid.Row="2" Placeholder="Correo electronico" Margin="30,0"></Entry>
+            <Entry Grid.Row="1" x:Name="txtNombre" Placeholder="Nombre completo" Margin="30,0"></Entry>
+            <Entry  Grid.Row="2" x:Name="txtApaterno" Placeholder="Apellido Paterno" Margin="30,0"></Entry>
+            <Entry  Grid.Row="2" x:Name="txtAmaterno" Placeholder="Apellido Materno" Margin="30,0"></Entry>
+            <Entry  Grid.Row="2" x:Name="txtTelefono" Placeholder="Telefono" Margin="30,0"></Entry>
+            <Entry  Grid.Row="2" x:Name="txtDireccion" Placeholder="Direccion" Margin="30,0"></Entry>
+            <Entry  Grid.Row="2" x:Name="txtColonia" Placeholder="Colonia" Margin="30,0"></Entry>
+            <Entry  Grid.Row="2" x:Name="txtEstado" Placeholder="Estado" Margin="30,0"></Entry>
+            <Entry  Grid.Row="2" x:Name="txtMunicipio" Placeholder="Munucipio" Margin="30,0"></Entry>
 
-            <Picker Title="Selecciona tu Estado" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="30,0"  TextColor="#9fa2a8"></Picker>
-            <Picker Title="Selecciona tu Ciudad" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="30,0" TextColor="#9fa2a8"></Picker>
-            <Picker Title="Selecciona tu Colonia" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="30,0" TextColor="#9fa2a8"></Picker>
-
+            
 
 
 
 
             <Button Grid.Row="1" Grid.Column="1" CornerRadius="10" BackgroundColor="White" HeightRequest="40" xct:ShadowEffect.Color="DarkBlue"
-                    HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,15" Text="Registrar" ></Button>
+                    HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,15" Text="Registrar" Clicked="Registrar_Clicked" ></Button>
 
 
 
             <Button Grid.Row="1" Grid.Column="2" CornerRadius="10" BackgroundColor="White" HeightRequest="40" xct:ShadowEffect.Color="DarkBlue"
-                    HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,15" Text="Consultar" Clicked="ConsultaClicked"></Button>
+                    HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,15" Text="Consultar Registros" Clicked="ConsultaClicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
