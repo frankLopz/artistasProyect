@@ -9,6 +9,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Acr.UserDialogs;
 
 namespace artistasProyect
 {
@@ -40,6 +41,7 @@ namespace artistasProyect
 
 		private async void Button_ClickedAsync(object sender, EventArgs e)
 		{
+			UserDialogs.Instance.ShowLoading("Recibiendo la informacion");
 
 			var request = new HttpRequestMessage();
 			request.RequestUri = new Uri("https://uri.somee.com/api/persona/getall");
@@ -49,9 +51,11 @@ namespace artistasProyect
 			HttpResponseMessage response = await client.SendAsync(request);
 			if (response.StatusCode == HttpStatusCode.OK)
 			{
+
 				string content = await response.Content.ReadAsStringAsync();
 				var resultado = JsonConvert.DeserializeObject<List<PersonaVM>>(content);
 
+				UserDialogs.Instance.HideLoading();
 
 				ListaPersona.ItemsSource = resultado;
 			}

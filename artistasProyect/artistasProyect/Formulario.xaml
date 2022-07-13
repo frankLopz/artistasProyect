@@ -26,6 +26,7 @@
             <Entry  Grid.Row="2" x:Name="txtEstado" Placeholder="Estado" Margin="30,0"></Entry>
             <Entry  Grid.Row="2" x:Name="txtMunicipio" Placeholder="Munucipio" Margin="30,0"></Entry>
 
+
             
 
 

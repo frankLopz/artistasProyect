@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using artistasProyect.Modelos;
 using System.Net;
 using System.Net.Http;
-
+using Acr.UserDialogs;
 
 
 using Xamarin.Forms;
@@ -21,6 +21,7 @@ namespace artistasProyect
         public Formulario()
         {
             InitializeComponent();
+            BindingContext = this;
         }
         private async void ConsultaClicked(object sender, EventArgs e)
         {
@@ -29,6 +30,8 @@ namespace artistasProyect
 
         private async void Registrar_Clicked(object sender, EventArgs e)
         {
+            UserDialogs.Instance.ShowLoading("Enviando la informacion");
+
             Persona persona = new Persona
             {   
                 Nombre = txtNombre.Text,
@@ -50,6 +53,8 @@ namespace artistasProyect
 
             if (response.StatusCode==HttpStatusCode.OK)
             {
+                UserDialogs.Instance.HideLoading();
+
                 await DisplayAlert("Datos", "Se realizo correctamente el registro","OK");
                 txtNombre.Text = "";
                 txtAmaterno.Text = "";
@@ -60,13 +65,17 @@ namespace artistasProyect
                 txtColonia.Text = "";
                 txtDireccion.Text = "";
 
-
             }
             else
             {
+                UserDialogs.Instance.HideLoading();
+
                 await DisplayAlert("Error","Ocurrio un error durante el registro ","Ok");
+
             }
 
         }
+
+        
     }
 }
