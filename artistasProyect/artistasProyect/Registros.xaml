@@ -24,8 +24,6 @@
             </ListView>
             
 
-            <Button Grid.Row="2" CornerRadius="10" BackgroundColor="White" HeightRequest="40" xct:ShadowEffect.Color="DarkBlue"
-                    HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,15" Text="Consultar Registros" Clicked="Button_ClickedAsync"></Button>
 
         </StackLayout>
 

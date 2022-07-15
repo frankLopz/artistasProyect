@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Acr.UserDialogs;
+using artistasProyect.Entities;
 
 namespace artistasProyect
 {
@@ -20,27 +21,12 @@ namespace artistasProyect
         public Registros()
         {
             InitializeComponent();
+			InicializarRegistros();
 		}
 
 
-		public class PersonaVM
-		{
-			public string ApellidoMaterno { get; set; }
-			public string ApellidoPatero { get; set; }
-			public string Colonia { get; set; }
-			public string Dirreccion { get; set; }
-			public int IdEstado { get; set; }
-			public int IdMunicipio { get; set; }
-			public string Nombre { get; set; }
-			public double Telefono { get; set; }
-			public int Id { get; set; }
-			public string FullName => $"{Nombre} {ApellidoPatero} {ApellidoMaterno}";
-
-			public string FullDireccion => $"{Dirreccion} {Colonia} {Telefono}";
-		}
-
-		private async void Button_ClickedAsync(object sender, EventArgs e)
-		{
+		public async void InicializarRegistros()
+        {
 			UserDialogs.Instance.ShowLoading("Recibiendo la informacion");
 
 			var request = new HttpRequestMessage();
@@ -53,13 +39,14 @@ namespace artistasProyect
 			{
 
 				string content = await response.Content.ReadAsStringAsync();
-				var resultado = JsonConvert.DeserializeObject<List<PersonaVM>>(content);
+				var resultado = JsonConvert.DeserializeObject<List<Personas>>(content);
 
 				UserDialogs.Instance.HideLoading();
 
 				ListaPersona.ItemsSource = resultado;
 			}
-
 		}
+
+
 	}
 }

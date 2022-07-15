@@ -17,17 +17,26 @@
        HorizontalTextAlignment="Center"/>
                 </Grid>
             </Frame>
+            
+            
             <Entry Grid.Row="1" x:Name="txtNombre" Placeholder="Nombre completo" Margin="30,0"></Entry>
             <Entry  Grid.Row="2" x:Name="txtApaterno" Placeholder="Apellido Paterno" Margin="30,0"></Entry>
             <Entry  Grid.Row="2" x:Name="txtAmaterno" Placeholder="Apellido Materno" Margin="30,0"></Entry>
             <Entry  Grid.Row="2" x:Name="txtTelefono" Placeholder="Telefono" Margin="30,0"></Entry>
-            <Entry  Grid.Row="2" x:Name="txtDireccion" Placeholder="Direccion" Margin="30,0"></Entry>
-            <Entry  Grid.Row="2" x:Name="txtColonia" Placeholder="Colonia" Margin="30,0"></Entry>
-            <Entry  Grid.Row="2" x:Name="txtEstado" Placeholder="Estado" Margin="30,0"></Entry>
-            <Entry  Grid.Row="2" x:Name="txtMunicipio" Placeholder="Munucipio" Margin="30,0"></Entry>
-
-
             
+            <Picker Title="Estado"
+                    x:Name="pickerEstado" SelectedIndexChanged="pickerEstado_SelectedIndexChanged" Margin="30,0"/>
+
+            <Picker Title="Municipio" x:Name="pickerMunicipio" Margin="30,0" />
+            
+            
+            <Entry  Grid.Row="2" x:Name="txtColonia" Placeholder="Colonia" Margin="30,0"></Entry>
+            <Entry  Grid.Row="2" x:Name="txtDireccion" Placeholder="Direccion" Margin="30,0"></Entry>
+            
+            
+
+
+
 
 
 
